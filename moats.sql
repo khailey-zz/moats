@@ -1,3 +1,17 @@
+/*
+
+Copyright Information
+=====================
+MOATS v1.06, April 2011
+(c) Adrian Billington www.oracle-developer.net
+(c) Tanel Poder       www.e2sn.com
+
+Modifications by Kyle Hailey http://dboptimizer.com
+for to add I/O histogram information 
+
+
+*/
+
 set define off
 set pause on
 
@@ -806,6 +820,11 @@ create or replace package body moats as
                        ' |');
 
       FOR i IN 0..7 LOOP
+          v_rown:=7+i;
+          v_rows(v_rown) := moats_output_ot( '| ' || lpad(v_waits(i),21,' ') || lpad(' ',  85 , ' ' ) || ' |');
+      END LOOP;
+
+      FOR i IN 0..7 LOOP
         v_hist_i:=i*23;
         v_rown:=7+i;
         v_rows(v_rown) := moats_output_ot(
@@ -840,9 +859,13 @@ create or replace package body moats as
                       ' |');
       END LOOP;
       return v_rows;
-/*
-                       lpad(v_hist(v_hist_i + 13),6,' ') ||
-*/
+    exception
+      when no_data_found then
+         --null;
+         -- raise_application_error(-20001, 'Error: '||sqlerrm||' at:'||chr(10)||dbms_utility.format_error_backtrace);
+         -- v_rows(v_rown) := moats_output_ot( '| ' || lpad(v_waits(i),21,' ') || lpad(' ',  85 , ' ' ) || ' |');
+                 return v_rows;
+
    end instance_summary;
 
    ----------------------------------------------------------------------------
