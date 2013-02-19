@@ -4,6 +4,11 @@ see
 * http://blog.tanelpoder.com/2011/03/29/moats-the-mother-of-all-tuning-scripts/
 * http://www.oracle-developer.net/utilities.php
 
+See also
+
+* http://oracleprof.blogspot.ie/2012/07/average-active-session-in-sqlplus-with.html  AAS graph in SQL*Plus
+* http://jagjeet.wordpress.com/category/oracle-11g/   SQL Dashboard
+* http://jagjeet.wordpress.com/2012/09/20/sql-dashboard-v2/
 
 Output looks like
     
