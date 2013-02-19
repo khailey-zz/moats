@@ -1,12 +1,11 @@
 Add I/O latency histograms to Tanel and Adrian's MOATS
 see
+
 * http://blog.tanelpoder.com/2011/03/29/moats-the-mother-of-all-tuning-scripts/
 * http://www.oracle-developer.net/utilities.php
 
 
-
-    
-    
+Output looks like
     MOATS: The Mother Of All Tuning Scripts v1.0 by Adrian Billington & Tanel Poder
            http://www.oracle-developer.net & http://www.e2sn.com
     
